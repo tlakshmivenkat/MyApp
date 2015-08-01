@@ -1,0 +1,17 @@
+<table>
+<tr>
+<td>Name</td>
+<td>Email</td>
+<td>Password</td>
+</tr>
+<% @user.each do |p|%>
+<tr>
+<td><%= p.name%></td>
+<td><%= p.email%></td>
+<td><%= p.password%></td>
+<td><%= image_tag p.image.photo(:medium) if !p.image.blank?%></td>
+<td><%= link_to "Edit", edit_user_path(p)%></td>
+<td><%= link_to "Delete", p, method: :delete, :data => {:confirm =>"Are you sure!"}%></td>
+</tr>
+<%end%>
+</table>

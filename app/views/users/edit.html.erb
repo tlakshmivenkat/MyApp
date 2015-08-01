@@ -1,0 +1,22 @@
+<% if @user.errors.any?%>
+  <% @user.errors.messages.each do |v|%>
+    <%= v%>
+  <%end%>
+<%end%>
+<table>
+<%= form_for @user do |f|%>
+<tr>
+<th>Ttile</th>
+<th>Description</th>
+<th>Price</th>
+</tr>
+<tr>
+<td><%= f.text_field :ttile%></td>
+<td><%= f.text_field :description%></td>
+<td><%= f.text_field :price%></td>
+</tr>
+<tr>
+<td><%= f.submit %></td>
+</tr>
+<%end%>
+</table>
