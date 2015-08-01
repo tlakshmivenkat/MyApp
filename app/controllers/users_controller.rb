@@ -55,6 +55,7 @@ def new
   end
   def destroy_session
     session[:user_id] = nil
+    redirect_to root_path
   end
   private
   def user_params
